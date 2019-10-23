@@ -23,19 +23,32 @@ router.post('/currencies', async (req, res) => {
           data           = await getCurrencies();
     // -------------------------------------------------------- \\
 
-    console.log(currencyAmount);
-    console.log(currencyFrom);
-    console.log(currencyTo);
-    console.log(currencyResult);
+    console.log('CURRENCY AMOUNT: ' + currencyAmount);
+    console.log('CURRENCY FROM: ' + currencyFrom);
+    console.log('CURRENCY TO: ' + currencyTo);
+    console.log('CURRENCY RESULT: ' + currencyResult);
     
     const currencies = Object.keys(data.rates);
-    const rates = Object.values(data.rates);
     
-    var found = currencies.find(function(coin) {
+    var cFromCurrency = currencies.find(function(coin) {
         return coin === currencyFrom;
     });
 
-    console.log(found);
+    var cToCurrency = currencies.find((coin) => {
+        return coin === currencyTo;
+    });
+
+    var value1 = data.rates[cFromCurrency];
+    console.log('FROM RATE: ' + value1);
+    var value2 = data.rates[cToCurrency];
+    console.log('TO RATE: ' + value2);
+
+    var conversion = currencyAmount * value2;
+    console.log('CONVERSION: ' + conversion);
+
+    var conversion1 = value2/(currencyAmount*value1);
+    console.log(conversion1)
+    console.log('/-------------------------------------------/');
 
     res.send('works');
 });
