@@ -14,17 +14,19 @@
 
 <body>
 
-    <h3>Currency Converter</h3>
     <div class="container">
+        <h3>Currency Converter</h3>
+        
         <form action="/currencies" method="POST">
             <label class="sr-only">Amount</label>
             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                <input name="currencyAmount" type="text" class="form-control currency-amount" placeholder="0.00" size="8">
+                <input name="currencyAmount" type="text" class="form-control currency-amount" placeholder="0.00"
+                    size="8">
                 <div class="input-group-addon">FROM</div>
                 <div class="input-group-addon currency-addon">
                     <select name="currencyFrom" class="currency-selector">
                         <% for (var i = 0; i < currencyName.length; i++) { %>
-                            <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
+                        <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
                         <% } %>
                     </select>
                 </div>
@@ -32,11 +34,12 @@
                 <div class="input-group-addon currency-addon">
                     <select name="currencyTo" class="currency-selector">
                         <% for (var i = 0; i < currencyName.length; i++) { %>
-                            <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
+                        <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
                         <% } %>
                     </select>
                 </div>
-                <input name="currencyResult" type="text" class="form-control currency-amount" placeholder="0.00" size="8">
+                <input name="currencyResult" type="text" class="form-control currency-amount" placeholder="0.00"
+                    size="8">
             </div>
             <button>Convert</button>
         </form>
