@@ -1,6 +1,7 @@
 const express = require('express'),
-      { getCurrencies, convertCurrencies } = require('../utils/getData'),
+      { getCurrencies, convertCurrency } = require('../utils/currencyData'),
       router  = new express.Router();
+// -------------------------------------------------------------------------- \\
 
 router.get('/', async (req, res) => {
     const data = await getCurrencies();
@@ -28,27 +29,7 @@ router.post('/currencies', async (req, res) => {
     console.log('CURRENCY TO: ' + currencyTo);
     console.log('CURRENCY RESULT: ' + currencyResult);
     
-    const currencies = Object.keys(data.rates);
-    
-    var cFromCurrency = currencies.find(function(coin) {
-        return coin === currencyFrom;
-    });
-
-    var cToCurrency = currencies.find((coin) => {
-        return coin === currencyTo;
-    });
-
-    var value1 = data.rates[cFromCurrency];
-    console.log('FROM RATE: ' + value1);
-    var value2 = data.rates[cToCurrency];
-    console.log('TO RATE: ' + value2);
-
-    var conversion = currencyAmount * value2;
-    console.log('CONVERSION: ' + conversion);
-
-    var conversion1 = value2/(currencyAmount*value1);
-    console.log(conversion1)
-    console.log('/-------------------------------------------/');
+    convertCurrency(currencyAmount, currencyFrom, currencyTo, currencyResult);
 
     res.send('works');
 });
