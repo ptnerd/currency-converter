@@ -16,12 +16,11 @@ router.get('/currencies', (req, res) => {
 
 });
 
-router.post('/currencies', async (req, res) => {
+router.post('/currencies', async (req, res, next) => {
     const currencyAmount = req.body.currencyAmount || null,
           currencyFrom   = req.body.currencyFrom,
           currencyTo     = req.body.currencyTo,
-          currencyResult = req.body.currencyResult || null,
-          data           = await getCurrencies();
+          currencyResult = req.body.currencyResult || null;
     // -------------------------------------------------------- \\
 
     console.log('CURRENCY AMOUNT: ' + currencyAmount);
@@ -29,9 +28,9 @@ router.post('/currencies', async (req, res) => {
     console.log('CURRENCY TO: ' + currencyTo);
     console.log('CURRENCY RESULT: ' + currencyResult);
     
-    convertCurrency(currencyAmount, currencyFrom, currencyTo, currencyResult);
-
-    res.send('works');
+    var test = await convertCurrency(currencyAmount, currencyFrom, currencyTo, currencyResult);
+    res.redirect('/');
+    // res.send('works');
 });
 
 module.exports = router;

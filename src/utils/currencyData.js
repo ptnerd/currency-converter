@@ -18,18 +18,17 @@ const convertCurrency = async (currencyAmount, currencyFrom, currencyTo, currenc
     try {
         const currencies = Object.keys(data.rates);
     
-        var cFromCurrency = currencies.find(function(coin) {
-            return coin === currencyFrom;
+        const cFromCurrency = currencies.find(function(currencyName) {
+            return currencyName === currencyFrom;
         });
     
-        var cToCurrency = currencies.find((coin) => {
-            return coin === currencyTo;
+        const cToCurrency = currencies.find((currencyName) => {
+            return currencyName === currencyTo;
         });
     
         var value1 = data.rates[cFromCurrency];
-        console.log('FROM RATE: ' + value1);
         var value2 = data.rates[cToCurrency];
-        console.log('TO RATE: ' + value2);
+        console.log('FROM RATE: ' + value1 + ' TO RATE: ' + value2);
     
         var conversion = currencyAmount * value2;
         console.log('CONVERSION: ' + conversion);
