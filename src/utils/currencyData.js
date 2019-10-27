@@ -23,7 +23,9 @@ const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
     try {
         const data = await getCurrencies();
         const currencies = Object.keys(data.rates);
-    
+        
+        log(warn('FROM: ') + currencyFrom + warn(' TO: ') + currencyTo);
+
         const cFromCurrency = currencies.find(function(currencyName) {
             return currencyName === currencyFrom;
         });
@@ -31,7 +33,7 @@ const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
         const cToCurrency = currencies.find((currencyName) => {
             return currencyName === currencyTo;
         });
-    
+        
         var value1 = data.rates[cFromCurrency];
         var value2 = data.rates[cToCurrency];
         log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
