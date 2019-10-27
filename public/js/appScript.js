@@ -2,7 +2,9 @@ console.log('CODE LOADED!!');
 const currencyForm = document.querySelector('form');
 const search = document.querySelector('input');
 const cFrom = document.getElementById('currencyFrom');
+cFrom.value = 'EUR';
 const cTo = document.getElementById('currencyTo');
+cTo.value = 'CZK';
 const messageOne = document.getElementById('message-1');
 
 currencyForm.addEventListener('submit', (e) => {
