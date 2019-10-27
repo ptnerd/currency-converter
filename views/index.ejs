@@ -15,7 +15,9 @@
         <%include ./partials/header %>
         <p>Use this site to get your Currency!</p>
         <p>Exhange Rates Date: <span><%= date %></span></p>
+        
         <form action="" method="">
+            <button id="clear" disabled>Clear</button>
             <input placeholder="Amount" type="text">
             <select id="currencyFrom" name="currencyFrom">
                 <option value="EUR">EUR</option>
@@ -25,7 +27,7 @@
                     <option value="<%= currency[i] %>"><%= currency[i] %></option>
                 <% } %>
             </select>
-            <button>Convert</button>
+            <button type="submit">Convert</button>
         </form>
         <p id="message-1"></p>
     </div>

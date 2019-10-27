@@ -29,6 +29,15 @@ header a {
   text-decoration: none;
 }
 
+#clear {
+  width: 50px;
+  cursor: pointer;
+  border: 1px solid #888888;
+  background-color: #888888;
+  color: white;
+  padding: 8px;
+}
+
 input,
 select {
   border: 1px solid #cccccc;
