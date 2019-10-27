@@ -6,45 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/appStyle.css">
-
     <title>Currency Converter</title>
 </head>
 
 <body>
-
-    <div class="container">
-        <h3>Currency Converter</h3>
-        
-        <form action="/currencies" method="POST">
-            <label class="sr-only">Amount</label>
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                <input name="currencyAmount" type="text" class="form-control currency-amount" placeholder="0.00"
-                    size="8">
-                <div class="input-group-addon">FROM</div>
-                <div class="input-group-addon currency-addon">
-                    <select name="currencyFrom" class="currency-selector">
-                        <% for (var i = 0; i < currencyName.length; i++) { %>
-                        <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
-                        <% } %>
-                    </select>
-                </div>
-                <div class="input-group-addon">TO</div>
-                <div class="input-group-addon currency-addon">
-                    <select name="currencyTo" class="currency-selector">
-                        <% for (var i = 0; i < currencyName.length; i++) { %>
-                        <option value="<%= currencyName[i] %>"><%= currencyName[i] %></option>
-                        <% } %>
-                    </select>
-                </div>
-                <input name="currencyResult" type="text" class="form-control currency-amount" placeholder="0.00"
-                    size="8">
-            </div>
+    <div class="main">
+        <%include ./partials/header %>
+        <p>Use this site to get your Currency!</p>
+        <p>Exhange Rates Date: <span><%= date %></span></p>
+        <form action="" method="">
+            <input placeholder="Amount" type="text">
+            <select id="currencyFrom" name="currencyFrom">
+                <option value="EUR">EUR</option>
+            </select>
+            <select id="currencyTo" name="currencyTo">
+                <% for (var i = 0; i < currency.length; i++) { %>
+                    <option value="<%= currency[i] %>"><%= currency[i] %></option>
+                <% } %>
+            </select>
             <button>Convert</button>
         </form>
+        <p id="message-1"></p>
     </div>
+    <%include ./partials/footer %>
+
     <script src="/js/appScript.js"></script>
 </body>
+
 </html>
