@@ -4,6 +4,7 @@
   "description": "Small App To Convert Currencies",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
   "author": "apintok",
