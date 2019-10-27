@@ -15,16 +15,18 @@
         <%include ./partials/header %>
         <p>Use this site to get your Currency!</p>
         <p>Exhange Rates Date: <span><%= date %></span></p>
-        
+
         <form action="" method="">
             <button id="clear" disabled>Clear</button>
             <input placeholder="Amount" type="text">
             <select id="currencyFrom" name="currencyFrom">
-                <option value="EUR">EUR</option>
+                <% for (var i = 0; i < currency.length; i++) { %>
+                <option value="<%= currency[i] %>"><%= currency[i] %></option>
+                <% } %>
             </select>
             <select id="currencyTo" name="currencyTo">
                 <% for (var i = 0; i < currency.length; i++) { %>
-                    <option value="<%= currency[i] %>"><%= currency[i] %></option>
+                <option value="<%= currency[i] %>"><%= currency[i] %></option>
                 <% } %>
             </select>
             <button type="submit">Convert</button>

@@ -26,23 +26,41 @@ const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
         
         log(warn('FROM: ') + currencyFrom + warn(' TO: ') + currencyTo);
 
-        const cFromCurrency = currencies.find(function(currencyName) {
-            return currencyName === currencyFrom;
-        });
-    
-        const cToCurrency = currencies.find((currencyName) => {
-            return currencyName === currencyTo;
-        });
+        if (currencyFrom == 'EUR') {
+            const cFromCurrency = currencies.find(function(currencyName) {
+                return currencyName === currencyFrom;
+            });
         
-        var value1 = data.rates[cFromCurrency];
-        var value2 = data.rates[cToCurrency];
-        log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
+            const cToCurrency = currencies.find((currencyName) => {
+                return currencyName === currencyTo;
+            });
+            
+            var value1 = data.rates[cFromCurrency];
+            var value2 = data.rates[cToCurrency];
+            log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
+        
+            var conversion = currencyAmount * value2;
+            log(warn('CONVERSION: ') + conversion);
+            log('/-------------------------------------------/');
     
-        var conversion = currencyAmount * value2;
-        log(warn('CONVERSION: ') + conversion);
-        log('/-------------------------------------------/');
-
-        return conversion;
+            return conversion;
+        } else {
+            const cFromCurrency = currencies.find(function(currencyName) {
+                return currencyName === currencyFrom;
+            });
+        
+            const cToCurrency = currencies.find((currencyName) => {
+                return currencyName === currencyTo;
+            });
+            
+            var value1 = data.rates[cFromCurrency];
+            var value2 = data.rates[cToCurrency];
+            log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
+            var conversion = currencyAmount / value1;
+            log(warn('CONVERSION: ') + conversion);
+            log('/-------------------------------------------/');
+            return conversion;
+        }
     } catch (e) {
         log(err('ERROR: ') + e);
     }
