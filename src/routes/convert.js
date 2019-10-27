@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
             date: data.date
         });    
     } catch (e) {
-        log(err('ERROR: ') + e);
-        res.status(404).send(e);
+        log(err(e));
+        res.status(404).send(e.message);
     }
 });
 

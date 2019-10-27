@@ -3,20 +3,20 @@ const axios = require('axios'),
 // -------------------------------------------------------------------------------------------------- \\
 const chalk = require('chalk')
       log   = console.log,
-      err = chalk.bold.red,
+      err   = chalk.bold.red,
       msg   = chalk.bold.blue,
       warn  = chalk.bold.yellow;
 // ------------------------------- \\
 
 const getCurrencies = () => {
-    try {
-        return axios.get(api)
-        .then((res) => {
-            return res.data;
-        });
-    } catch (e) {
-        log(e);
-    }
+    return axios.get(api)
+    .then((res) => {
+        return res.data;
+    }).catch((error) => {
+        if (error.response == undefined) {
+            throw new Error('Unable to Connect to Currency Exchange API.');
+        }
+    });
 }
 
 const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
