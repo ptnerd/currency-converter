@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(convertRoute);
 
+app.get('*', (req, res) => {
+    res.send('Page Not Found!');
+});
+
 app.listen(port, () => {
     console.log('SERVER ON --- ' + port);
 });

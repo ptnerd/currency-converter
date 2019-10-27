@@ -38,14 +38,11 @@ const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
     
         var conversion = currencyAmount * value2;
         log(warn('CONVERSION: ') + conversion);
-    
-        var conversion1 = value2/(currencyAmount*value1);
-        log(warn('FINAL RESULT: ') + conversion1);
         log('/-------------------------------------------/');
 
-        return conversion1;
+        return conversion;
     } catch (e) {
-        log(err('Unable to Connect') + e);
+        log(err('ERROR: ') + e);
     }
 }
 
