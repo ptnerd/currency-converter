@@ -12,5 +12,9 @@ Small web app that allows you to convert exachange rates from Euros (€) to any
 
 **Status**
 * Working on error handling
-* Allow user to convert currency back
 * To be deployed...
+
+**Problems**
+* Allow user to convert currency back
+* I am able to do the conversion when using EUR as one of the currencies From/To
+* When not using EUR the conversion is returning a wrong value
