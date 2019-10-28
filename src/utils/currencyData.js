@@ -8,61 +8,28 @@ const chalk = require('chalk')
       warn  = chalk.bold.yellow;
 // ------------------------------- \\
 
-const getCurrencies = () => {
-    return axios.get(api)
-    .then((res) => {
-        return res.data;
-    }).catch((error) => {
-        if (error.response == undefined) {
-            throw new Error('Unable to Connect to Currency Exchange API.');
-        }
-    });
+const getCurrencies = async () => {
+    try {
+        return axios.get(api); // Returns the API Promise Object
+    } catch (error) {
+        throw error || new Error('Unable to Connect to Currency Exchange API.');
+    }
 }
 
-const convertCurrency = async (currencyAmount, currencyFrom, currencyTo) => {
+const convertCurrency = async (currencyAmount = 1, currencyFrom = 'EUR', currencyTo = 'EUR') => {
     try {
-        const data = await getCurrencies();
-        const currencies = Object.keys(data.rates);
-        
-        log(warn('FROM: ') + currencyFrom + warn(' TO: ') + currencyTo);
+        const { data } = await getCurrencies();
 
-        if (currencyFrom == 'EUR') {
-            const cFromCurrency = currencies.find(function(currencyName) {
-                return currencyName === currencyFrom;
-            });
-        
-            const cToCurrency = currencies.find((currencyName) => {
-                return currencyName === currencyTo;
-            });
-            
-            var value1 = data.rates[cFromCurrency];
-            var value2 = data.rates[cToCurrency];
-            log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
-        
-            var conversion = currencyAmount * value2;
-            log(warn('CONVERSION: ') + conversion);
-            log('/-------------------------------------------/');
-    
-            return conversion;
-        } else {
-            const cFromCurrency = currencies.find(function(currencyName) {
-                return currencyName === currencyFrom;
-            });
-        
-            const cToCurrency = currencies.find((currencyName) => {
-                return currencyName === currencyTo;
-            });
-            
-            var value1 = data.rates[cFromCurrency];
-            var value2 = data.rates[cToCurrency];
-            log(warn('FROM RATE: ') + value1 + warn(' TO RATE: ') + value2);
-            var conversion = currencyAmount / value1;
-            log(warn('CONVERSION: ') + conversion);
-            log('/-------------------------------------------/');
-            return conversion;
-        }
-    } catch (e) {
-        log(err('ERROR: ') + e);
+        log(warn('CURRENCY FROM: ') + currencyFrom + warn(' CURRENCY TO: ') + currencyTo);
+
+        const valueInEur = (1 / data.rates[currencyFrom]) * currencyAmount;
+        log(warn('EXCHANGE RATE: ') + data.rates[currencyFrom]);
+        log(warn('VALUE IN EUROS: ') + valueInEur);
+        log(msg('RESULT: ' ) + data.rates[currencyTo] * valueInEur);
+        return data.rates[currencyTo] * valueInEur;
+
+    } catch (err) {
+        log(err('ERROR: ') + err);
     }
 }
 

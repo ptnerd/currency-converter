@@ -8,13 +8,10 @@ Small web app that allows you to convert exachange rates from Euros (€) to any
 * NodeJS 
 * Axios
 * Chalk (just for code debug and terminal print) :)
-* 
 
 **Status**
 * Working on error handling
-* To be deployed...
+* Application deploye using Heroku at https://i-coin.herokuapp.com
 
 **Problems**
-* Allow user to convert currency back
-* I am able to do the conversion when using EUR as one of the currencies From/To
-* When not using EUR the conversion is returning a wrong value
+* UI Improvement...

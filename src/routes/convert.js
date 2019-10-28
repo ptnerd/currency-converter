@@ -11,10 +11,9 @@ const chalk = require('chalk')
 
 router.get('/', async (req, res) => {
     try {
-        const data = await getCurrencies();
-        const currency = Object.keys(data.rates);
+        const { data } = await getCurrencies();
         res.render('index', {
-            currency,
+            currency: Object.keys(data.rates),
             date: data.date
         });    
     } catch (e) {
@@ -23,13 +22,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/currencies', async (req, res) => {
+router.get('/currencies', async ({ query }, res) => {
     try {
-        const amount = req.query.amount;
-        const currencyFrom = req.query.currencyFrom;
-        const currencyTo = req.query.currencyTo;
+        const { amount, currencyFrom, currencyTo } = query;
     
-        if(!amount){
+        if(!amount) {
             return res.send({
                 error: 'Please provide an amount to convert!'
             });
