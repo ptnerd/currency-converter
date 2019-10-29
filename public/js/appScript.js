@@ -5,7 +5,8 @@ const cFrom = document.getElementById('currencyFrom');
 cFrom.value = 'EUR';
 const cTo = document.getElementById('currencyTo');
 cTo.value = 'CZK';
-const messageOne = document.getElementById('message-1');
+const messageOne = document.getElementById('message');
+const messageTwo = document.getElementById('message-1');
 
 currencyForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -23,7 +24,9 @@ currencyForm.addEventListener('submit', (e) => {
             if(data.error){
                 messageOne.textContent = data.error;
             } else {
-                messageOne.textContent = 'Converted Amount: ' + parseFloat(data.result).toFixed(2); 
+                // messageOne.textContent = 'Converted Amount: ' + parseFloat(data.result).toFixed(2);
+                messageOne.textContent = ''; 
+                messageTwo.value = parseFloat(data.result).toFixed(3); 
             }
         });
     });

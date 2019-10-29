@@ -1,6 +1,5 @@
 <%include ./partials/head %>
 
-
 <div class="main">
     <header>
         <h2>Currency Converter</h2>
@@ -8,10 +7,9 @@
         <a href="/about">About</a>
         <a href="/github" target="_blank">GitHub</a>
     </header>
-    <p>Use this site to get your Currency!</p>
-    <p>Exhange Rates Date: <span><%= date %></span></p>
 
     <div class="main-container">
+        <p>Use this site to get your Currency! Exhange Rates Date: <span><%= date %></span></p>
         <form action="" method="">
             <input placeholder="Amount" type="text">
             <select id="currencyFrom" name="currencyFrom">
@@ -19,15 +17,16 @@
                 <option value="<%= currency[i] %>"><%= currency[i] %></option>
                 <% } %>
             </select>
+            <button type="submit">Convert</button>
             <select id="currencyTo" name="currencyTo">
                 <% for (var i = 0; i < currency.length; i++) { %>
                 <option value="<%= currency[i] %>"><%= currency[i] %></option>
                 <% } %>
             </select>
-            <button type="submit">Convert</button>
-            <button id="clear" disabled>Clear</button>
+            <!-- <button id="clear" disabled>Clear</button> -->
+            <input id="message-1" placeholder="Exchange"></input>
         </form>
-        <p id="message-1"></p>
+        <p id="message"></p>
     </div>
 </div>
 <%include ./partials/footer %>
