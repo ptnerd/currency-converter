@@ -42,6 +42,10 @@ router.get('/currencies', async ({ query }, res) => {
     }
 });
 
+router.get('/about', (req, res) => {
+    res.render('about');
+});
+
 router.get('/github', (req, res) => {
     res.redirect('https://github.com/ptnerd/currency-converter');
 });

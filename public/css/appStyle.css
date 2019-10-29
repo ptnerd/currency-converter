@@ -13,9 +13,16 @@ body {
   flex-grow: 1;
 }
 
+.main-container {
+  border: none;
+  padding: 15px;
+  height: 200px;
+  background: #e7e7e7;
+}
+
 header {
   margin-top: 16px;
-  margin-bottom: 48px; 
+  margin-bottom: 18px; 
 }
 
 h1 {
