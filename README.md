@@ -21,5 +21,7 @@ If the first (left) input inbox is empty an amount will be requested.
 
 **Problems**
 * UI Improvement...
-* Environment Vairiables - FIXED
+* Environment Vairiables - FIXED;
 * if the value entered is using a float number using comma (,) NaN will be returned;
+- But in the UI the user will see the error 'Please enter a valid number value';
+- Workaround is to use dot (.) for now;
