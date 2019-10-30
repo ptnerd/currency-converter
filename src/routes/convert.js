@@ -12,10 +12,11 @@ const chalk = require('chalk')
 router.get('/', async (req, res) => {
     try {
         const { data } = await getCurrencies();
-        res.render('index', {
-            currency: Object.keys(data.rates),
-            date: data.date
-        });    
+        res.render('index'); 
+        // res.render('index', {
+        //     currency: Object.keys(data.rates),
+        //     date: data.date
+        // });  
     } catch (e) {
         log(err(e));
         res.status(404).send(e.message);
