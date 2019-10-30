@@ -1,5 +1,5 @@
 const axios = require('axios'),
-      api   = 'http://data.fixer.io/api/latest?access_key=8b4617c5c7b56543342a965cc339c715&format=1';
+      api   = 'http://data.fixer.io/api/latest?access_key=' + process.env.MYKEY + '&format=1';
 // -------------------------------------------------------------------------------------------------- \\
 const chalk = require('chalk')
       log   = console.log,
