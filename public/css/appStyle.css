@@ -28,6 +28,10 @@ body {
   text-align: center;
 }
 
+.converter {
+  display: inline-block;
+}
+
 header {
   margin-top: 10px;
   margin-bottom: 10px; 
@@ -37,6 +41,7 @@ header {
 
 h2 {
   font-size: 44px;
+  color: #AF00AA;
   margin: 10px auto;
 }
 
@@ -47,31 +52,28 @@ header a {
   font-size: 20px;
 }
 
-#clear {
-  width: 50px;
-  cursor: pointer;
-  border: 1px solid #888888;
-  background-color: #888888;
-  color: white;
-  padding: 8px;
+input {
+  border-radius: 8px 8px;
 }
 
 input,
 select {
   border: 1px solid #cccccc;
   padding: 8px;
+  margin-bottom: 4px;
 }
 
 button {
   cursor: pointer;
   border: 1px solid #888888;
-  background-color: #888888;
+  background-color: #AF00AA;
   color: white;
-  padding: 8px;
+  padding: 8px 64px 8px 64px;
+  margin-bottom: 4px;
 }
 
 button:hover {
-  background-color: black;
+  background-color: #CF00C9;
 }
 
 footer {

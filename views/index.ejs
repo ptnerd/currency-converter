@@ -10,22 +10,24 @@
 
     <div class="main-container">
         <p>Use this site to get your Currency! Exhange Rates Date: <span><%= date %></span></p>
-        <form action="" method="">
-            <input placeholder="Amount" type="text">
-            <select id="currencyFrom" name="currencyFrom">
-                <% for (var i = 0; i < currency.length; i++) { %>
-                <option value="<%= currency[i] %>"><%= currency[i] %></option>
-                <% } %>
-            </select>
-            <button type="submit">Convert</button>
-            <select id="currencyTo" name="currencyTo">
-                <% for (var i = 0; i < currency.length; i++) { %>
-                <option value="<%= currency[i] %>"><%= currency[i] %></option>
-                <% } %>
-            </select>
-            <!-- <button id="clear" disabled>Clear</button> -->
-            <input id="message-1" placeholder="Exchange"></input>
-        </form>
+        <div class="converter">
+            <form action="" method="">
+                <input placeholder="Amount" type="text">
+                <select id="currencyFrom" name="currencyFrom">
+                    <% for (var i = 0; i < currency.length; i++) { %>
+                    <option value="<%= currency[i] %>"><%= currency[i] %></option>
+                    <% } %>
+                </select>
+                <button type="submit">Convert</button>
+                <select id="currencyTo" name="currencyTo">
+                    <% for (var i = 0; i < currency.length; i++) { %>
+                    <option value="<%= currency[i] %>"><%= currency[i] %></option>
+                    <% } %>
+                </select>
+                <!-- <button id="clear" disabled>Clear</button> -->
+                <input id="message-1" placeholder="Exchange"></input>
+            </form>
+        </div>
         <p id="message"></p>
     </div>
 </div>

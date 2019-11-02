@@ -34,3 +34,11 @@ currencyForm.addEventListener('submit', (e) => {
         });
     });
 });
+
+$(function() {
+	$('#currencyFrom').selectize();
+});
+
+$(function() {
+	$('#currencyTo').selectize();
+});
