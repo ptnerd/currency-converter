@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         res.render('index', {
             currency: Object.keys(data.rates),
             date: data.date
-        });  
+        });
     } catch (e) {
         log(err(e));
         res.status(404).send(e.message);

@@ -14,18 +14,17 @@ If the first (left) input inbox is empty an amount will be requested.
 * Axios
 * Chalk (just for code debug and terminal print) :)
 * CMD-ENV
-* Selectize
+* Bootstrap
 * JQuery
 
 **Status**
 * Working on error handling;
 * Application deployed using Heroku at https://i-coin.herokuapp.com;
-* Added simplified version of Selectize.js https://github.com/selectize/selectize.js
+* Working on the UI improvement. Currently Applying SCSS & Bootstrap
 
 **Problems**
-* UI Improvement...
-* About Page breaks on smaller displays
 * Environment Vairiables - FIXED;
+* About Page breaks on smaller displays
 * jQuery is need in order for Selectize to work, for now I am using the online CDN lib
 * if the value entered is using a float number using comma (,) NaN will be returned;
 - But in the UI the user will see the error 'Please enter a valid number value';
