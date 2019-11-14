@@ -1,9 +1,10 @@
 $themecolor: #4900FF;
-$light: $themecolor;
-$navbar-light-brand-color: #FFF;
+
 $primary: $themecolor;
 $navbar-brand-font-size: 30;
-$navbar-light-color: #FFF;
+$navbar-light-color: $themecolor;
+$navbar-light-active-color: $themecolor;
+$navbar-light-brand-color: $themecolor;
 
 body {
     #bg {
@@ -14,6 +15,11 @@ body {
         position: absolute;
         z-index: -1;
     }
+
+    #exchange {
+        color: $themecolor;
+    }
+
 }
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss"
