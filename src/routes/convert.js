@@ -50,4 +50,8 @@ router.get('/github', (req, res) => {
     res.redirect('https://github.com/ptnerd/currency-converter');
 });
 
+router.get('/fixer', (req, res) => {
+    res.redirect('https://fixer.io');
+});
+
 module.exports = router;
