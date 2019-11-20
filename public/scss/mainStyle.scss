@@ -1,10 +1,12 @@
-$themecolor: #4900FF;
+$themecolor: #5294FF;
 
 $primary: $themecolor;
 $navbar-brand-font-size: 30;
 $navbar-light-color: $themecolor;
 $navbar-light-active-color: $themecolor;
 $navbar-light-brand-color: $themecolor;
+$enable-shadows: true;
+$box-shadow: 0 1rem 5rem rgba(#000, 0.5);
 
 body {
     #bg {
@@ -20,6 +22,17 @@ body {
         color: $themecolor;
     }
 
+    #info {
+        background-color: #83B2FF;
+        border: 1px solid #FFF;
+        border-radius: 6px 6px;
+        color: #FFF;
+    }
+
+    a {
+        text-decoration: none;
+        color: #FFF;
+    }
 }
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss"
