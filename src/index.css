@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-content {
+  width: 100%;
+  padding: 5%;
+  margin: auto;
+  background-color: #614ea6;
+  height: 100vh;
+  align-content: center;
+}
+
+
+
+.btn-login{
+  background-color: #fff;
+  color: #614ea6;
+}
+
+.btn-login:hover{
+  background-color: #F21667;
+  color: #fff;
+}
+
+.opcoes-login a {
+  text-decoration: none;
+  color: #fff;
+  transition: .3s ease-in;
+}
+
+.opcoes-login a:hover {
+  text-decoration: none;
+  color: #F21667;
+}
+
+.navbar{
+  background-color: #614ea6;
+  
+}
+
+.nav-item a{
+  color: #fff;
+  transition: .3s ease-in;
+}
+
+.nav-item a:hover{
+  color: #F21667;
+}
+
+
+
+.form-login{
+  /* max-width: 650px; */
+  width: 100%;
+  padding: 5%;
+  margin: auto; 
+  height: 100vh;
+}
+
+.btn-cadastro{
+  background-color: #614EA6;
+  color: #fff;
+}
+
+.btn-cadastro:hover{
+  background-color: #F21667;
+  color: #fff;
+}
+
+.opcoes-cadastro a {
+  text-decoration: none;
+  color: #000;
+  transition: .3s ease-in;
+}
+
+.opcoes-cadastro a:hover {
+  text-decoration: none;
+  color: #F21667;
+}
+
+.btn-enviar{
+  background-color: #614ea6;
+  color: #fff;
+}
+
+.btn-enviar:hover{
+  background-color: #F21667;
+  color: #fff;
+}
