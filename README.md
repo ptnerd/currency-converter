@@ -58,12 +58,13 @@ Hospedado no moacir.net:  [http://moacir.net/reactPlaylist/](http://moacir.net/r
 
 
 ### :heavy_check_mark: To-DO
- - [] React BootStrap funcional
- - [] Historico de consultas
- - [] Persistencia de dados localstorage
- - [] Login/Cadastro
- - [] Armazenar historico Remoto
- - [] Alertas (monitorar valores de moedas)
+ - [x] Ponto inicial - commit via vsCode
+ - [ ] React BootStrap funcional
+ - [ ] Historico de consultas
+ - [ ] Persistencia de dados localstorage
+ - [ ] Login/Cadastro
+ - [ ] Armazenar historico Remoto
+ - [ ] Alertas (monitorar valores de moedas)
   
 
 ### :link: Links 
@@ -79,7 +80,18 @@ Nao ha backend no momento.
  - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
   
  
- 
+###FlowChart
+
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
 
 #
 <footer>
