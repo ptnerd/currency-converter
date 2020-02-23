@@ -38,6 +38,53 @@ As it is a async/await call you might see a loading message while the conversion
 etc
 
 
-bla
+---
+
+## :checkered_flag: Passos para instalar o projeto 
+
+Para rodar a aplicação, execute o comando: <br>
+
+```console
+npm install
+npm run start
+``` 
+Em seguida, será aberto o endereço [http://localhost:3000](http://localhost:3000) em seu navegador.<br><br>
+
+### :file_folder: Estrutura local
+pasta: Documents\projetosCompartilhados\currency-converter
+
+<!-- ### :trophy: Versao Online
+Hospedado no moacir.net:  [http://moacir.net/reactPlaylist/](http://moacir.net/reactPlaylist/) -->
+
+
+### :heavy_check_mark: To-DO
+ - [] React BootStrap funcional
+ - [] Historico de consultas
+ - [] Persistencia de dados localstorage
+ - [] Login/Cadastro
+ - [] Armazenar historico Remoto
+ - [] Alertas (monitorar valores de moedas)
+  
+
+### :link: Links 
+Algo que pode ser util.
+ - [Video FreeCodeCamp](https://youtu.be/iVRO0toVdYM)  
+ - [Repo no Git](https://github.com/weibenfalk/hooks-videoplayer-starterfiles)
+
+
+### :satellite: Backend 
+Nao ha backend no momento. 
+
+#### :blue_book: Documentacao
+ - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+  
+ 
+ 
+
+#
+<footer>
+<p style="float:right; width: 20%;">
+Copyright © Moacir Jacomin e Andre Pinto
+</p>
 
 
