@@ -17,7 +17,7 @@ As it is a async/await call you might see a loading message while the conversion
 * Sass
 
 **Status**
-* Application deployed using Heroku at https://i-coin.herokuapp.com;
+* Application deployed using Heroku at https://i-coin.herokuapp.com
 * Working on error handling;
 
 **Upgrades**
