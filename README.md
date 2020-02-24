@@ -34,11 +34,11 @@ As it is a async/await call you might see a loading message while the conversion
 * Environment Variables - FIXED;
 * If the value entered is using a float number using comma (,) type NaN will be returned, in the UI the user * will see the error 'Please enter a valid number value'. The workaround for now is to use dot (.);
 
-# Hi there
-etc
-
-
 ---
+
+# Versao React
+
+Versao antiga na pasta versaoAntiga
 
 ## :checkered_flag: Passos para instalar o projeto 
 
@@ -59,6 +59,7 @@ Hospedado no moacir.net:  [http://moacir.net/reactPlaylist/](http://moacir.net/r
 
 ### :heavy_check_mark: To-DO
  - [x] Ponto inicial - commit via vsCode
+ - [x] API - lista de moedas no contexto/state global
  - [ ] React BootStrap funcional
  - [ ] Historico de consultas
  - [ ] Persistencia de dados localstorage
@@ -69,29 +70,16 @@ Hospedado no moacir.net:  [http://moacir.net/reactPlaylist/](http://moacir.net/r
 
 ### :link: Links 
 Algo que pode ser util.
- - [Video FreeCodeCamp](https://youtu.be/iVRO0toVdYM)  
- - [Repo no Git](https://github.com/weibenfalk/hooks-videoplayer-starterfiles)
+ - [Fixer.io JSON](http://data.fixer.io/api/latest?access_key=17d4bb13faa2bdd72b9a611cf82f8fa0&format=1)  
 
 
 ### :satellite: Backend 
 Nao ha backend no momento. 
 
 #### :blue_book: Documentacao
- - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+ - [Fixer.io](https://fixer.io/quickstart)
   
  
-### FlowChart
-
-```flow
-st=>start: Login
-op=>operation: Login operation
-cond=>condition: Successful Yes or No?
-e=>end: To admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
 
 #
 <footer>
