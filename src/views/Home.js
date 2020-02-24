@@ -6,15 +6,15 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 const Home = () => {
-    const [email, setEmail]           = useState();
-    const [senha, setSenha]           = useState();
-    const [msgTipo, setMsgTipo]       = useState();
-    const [msg, setMsg]               = useState();
+    const [email, setEmail] = useState();
+    const [senha, setSenha] = useState();
+    const [msgTipo, setMsgTipo] = useState();
+    const [msg, setMsg] = useState();
     const [carregando, setCarregando] = useState(0);
     const { getAPIdata }              = useContext(GlobalContext);
     const { loading }                 = useContext(GlobalContext);
 
-    function converter(){
+    function converter() {
         setMsgTipo(null);
         setCarregando(1);
 
@@ -24,7 +24,7 @@ const Home = () => {
         //     setCarregando(0);
         //     return; 
         // }
-        
+
         console.log('apertou para converter: ', email);
     }
 
@@ -47,7 +47,7 @@ const Home = () => {
                             <div className="card-body shadow">
                                 <form>
                                     <div className="form-group">
-                                        <input type="text" className="form-control" placeholder="Amount" onChange={(e) => setEmail(e.target.value)}  />
+                                        <input type="text" className="form-control" placeholder="Amount" onChange={(e) => setEmail(e.target.value)} />
                                     </div>
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
@@ -67,12 +67,19 @@ const Home = () => {
                                     </div>
                                     <div className="d-flex justify-content-between">
                                         <span id="warning"></span>
-                                         
-
                                         <button type="button" className="btn btn-lg btn-block mt-3 mb-5 btn-cadastro" onClick={converter}>Exchange </button>
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-7">
+                        <div className="historico">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">ultima Conversao feita</li>
+                                <li className="list-group-item">Conversao Seguinte</li>
+                                <li className="list-group-item">Primeira Conversao</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

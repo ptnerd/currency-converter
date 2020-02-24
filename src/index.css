@@ -21,8 +21,6 @@ code {
   align-content: center;
 }
 
-
-
 .btn-login{
   background-color: #fff;
   color: #614ea6;
@@ -57,8 +55,6 @@ code {
 .nav-item a:hover{
   color: #F21667;
 }
-
-
 
 .form-login{
   /* max-width: 650px; */
@@ -97,4 +93,22 @@ code {
 .btn-enviar:hover{
   background-color: #F21667;
   color: #fff;
+}
+
+/*HISTORICO DE CONVERSOES*/
+
+.historico ul {
+	list-style-type: none;
+	margin: 0;
+  padding: 0;
+}
+
+.historico ul li {
+	border: none;
+	background-color: #D0C2FF;
+	padding: 20px;
+}
+
+.historico ul li:hover {
+	background-color: #E0D7FF;
 }
