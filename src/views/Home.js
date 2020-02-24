@@ -1,6 +1,9 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect,useContext} from 'react';
 import { Link }         from "react-router-dom";
 import Navbar from '../components/navbar';
+import CurrencyDropDown from '../components/currency-select';
+import { GlobalContext } from '../context/GlobalState';
+
 
 const Home = () => {
     const [email, setEmail]           = useState();
@@ -8,6 +11,8 @@ const Home = () => {
     const [msgTipo, setMsgTipo]       = useState();
     const [msg, setMsg]               = useState();
     const [carregando, setCarregando] = useState(0);
+    const { getAPIdata }              = useContext(GlobalContext);
+    const { loading }                 = useContext(GlobalContext);
 
     function converter(){
         setMsgTipo(null);
@@ -23,6 +28,15 @@ const Home = () => {
         console.log('apertou para converter: ', email);
     }
 
+    useEffect(() => {
+        console.log('rodei rotina porque rodei o Home');
+        getAPIdata();
+    }, []);
+
+    useEffect(() => {
+        console.log('useEffect loading rodou loading='+loading);    
+    }, [loading]);
+
     return (
         <>
             <Navbar />
@@ -37,23 +51,16 @@ const Home = () => {
                                     </div>
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
-                                            <label className="input-group-text" for="inputGroupSelect01">From</label>
+                                            <label className="input-group-text" htmlFor="inputGroupSelect01">From</label>
                                         </div>
-                                        <select className="form-control" id="inputGroupSelect01" name="currencyFrom">
-                                            {/* <% for (var i = 0; i < currency.length; i++) { %> */}
-                                            <option value="<%= currency[i] %>"> </option>
-                                            {/* <% } %> */}
-                                        </select>
+                                        <CurrencyDropDown currencySelected="EUR"/>
                                     </div>
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
-                                            <label className="input-group-text" for="inputGroupSelect02">To</label>
+                                            <label className="input-group-text" htmlFor="inputGroupSelect02">To</label>
                                         </div>
-                                        <select className="form-control" id="inputGroupSelect02" name="currencyTo">
-                                            {/* <% for (var i = 0; i < currency.length; i++) { %> */}
-                                            <option value="<%= currency[i] %>"> </option>
-                                            {/* <% } %> */}
-                                        </select>
+                                        
+                                        <CurrencyDropDown currencySelected="USD"/>
                                     </div>
                                     <div className="form-group">
                                         <input id="result" type="text" className="form-control" placeholder="Exchanged Value" />
