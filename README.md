@@ -66,6 +66,7 @@ Hospedado no moacir.net:  [http://moacir.net/reactPlaylist/](http://moacir.net/r
  - [ ] Login/Cadastro
  - [ ] Armazenar historico Remoto
  - [ ] Alertas (monitorar valores de moedas)
+ - [ ] flags: https://react.semantic-ui.com/elements/flag/#types-flag
   
 
 ### :link: Links 
