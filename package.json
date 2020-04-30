@@ -18,7 +18,8 @@
     "env-cmd": "^10.0.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
-    "kind-of": "^6.0.3"
+    "kind-of": "^6.0.3",
+    "minimist": "^1.2.5"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
